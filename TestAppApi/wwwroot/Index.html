@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Team CRUD</title>
+    <style>
+        input[type='submit'], button, [aria-label] {
+            cursor: pointer;
+        }
+
+        #spoiler {
+            display: none;
+        }
+        #spoiler2 {
+            display: none;
+        }
+
+        table {
+            font-family: Arial, sans-serif;
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #0066CC;
+            color: white;
+        }
+
+        td {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Team CRUD</h1>
+    <h3>Add</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="add-name" placeholder="Team Name">
+        <input type="text" id="add-location" placeholder="Location">
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="spoiler">
+        <h3>Edit</h3>
+        <form class="my-form">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-name">
+            <input type="text" id="edit-location">
+            <input type="text" id="edit-players">
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Players</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tbody id="Teams"></tbody>
+    </table>
+
+    <h1>Player CRUD</h1>
+    <h3>Add</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem2()">
+        <input type="text" id="add-firstName" placeholder="First Name">
+        <input type="text" id="add-lastName" placeholder="Last Name">
+        <input type="text" id="add-playerNumber" placeholder="Number">
+        <input type="text" id="add-playerPosition" placeholder="Position">
+        <select id="fileId"></select>
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="spoiler2">
+        <h3>Edit</h3>
+        <form class="my-form2">
+            <input type="hidden" id="edit-id2">
+            <input type="text" id="edit-firstName">
+            <input type="text" id="edit-lastName">
+            <input type="text" id="edit-playerNumber">
+            <input type="text" id="edit-playerPosition">    
+            <select id="fileId"></select>
+
+            <input type="submit" value="Save">
+            <a onclick="closeInput2()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter2"></p>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Number</th>
+            <th>Position</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tbody id="Teams2"></tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="site.js"></script>
+</body>
+</html>
